@@ -1,5 +1,6 @@
 package com.goldencity.moneymanageapi.dto;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -11,14 +12,21 @@ import java.util.Date;
 @NoArgsConstructor
 public class TransactionDTO {
 
+    @ApiModelProperty(hidden = true)
     private Long id;
 
-    private Character transactionType;
+    private String transactionName;
 
-    private String transactionDescription;
+    private String category;
 
     private BigDecimal amount;
 
     private Date dateOfTransaction;
+
+    private Character creditDebit;
+
+    private String transactionType;
+
+    private String transactionDescription;
 
 }

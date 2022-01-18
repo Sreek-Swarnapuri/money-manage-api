@@ -17,21 +17,33 @@ public class Transactions {
 
     @Id
     @Column(name = "ID")
-    @GeneratedValue(generator = "TRANACTIONS_SEQ")
-    @SequenceGenerator(name = "TRANACTIONS_SEQ", sequenceName = "TRANACTIONS_SEQ", allocationSize = 1)
+    @GeneratedValue(generator = "TRANSACTIONS_SEQ")
+    @SequenceGenerator(name = "TRANSACTIONS_SEQ", sequenceName = "TRANSACTIONS_SEQ", allocationSize = 1)
     private Long id;
 
-    @Column(name = "TRANSACTION_TYPE")
-    private Character transactionType;
+    @Column(name = "TRANSACTION_NAME", nullable = false)
+    private String transactionName;
 
-    @Column(name = "TRANSACTION_DESC")
-    private String transactionDescription;
+    @Column(name = "CATEGORY")
+    private String category;
 
     @Column(name = "AMOUNT", nullable = false)
     private BigDecimal amount;
 
     @Column(name = "DATE_OF_TRANSACTION", nullable = false)
     private Date dateOfTransaction;
+
+    @Column(name = "MODE_OF_PAYMENT", nullable = false)
+    private String modeOfPayment;
+
+    @Column(name = "CREDIT_DEBIT", nullable = false)
+    private Character creditDebit;
+
+    @Column(name = "TRANSACTION_TYPE")
+    private String transactionType;
+
+    @Column(name = "TRANSACTION_DESC")
+    private String transactionDescription;
 
     @Column(name = "CREATED_BY")
     private String createdBy;
